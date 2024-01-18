@@ -11,7 +11,7 @@ void file_open(char *fname)
 	FILE *f_des = fopen(fname, "r");
 
 	if (fname == NULL || f_des == NULL)
-		err(2, fname);
+		err_pr(2, fname);
 
 	file_read(f_des);
 	fclose(f_des);
@@ -53,7 +53,7 @@ int line_parse(char *buf, int ln, int form)
 	const char *del = "\n ";
 
 	if (buf == NULL)
-		err(4);
+		err_pr(4);
 
 	op_code = strtok(buf, del);
 	if (op_code == NULL)
@@ -105,9 +105,9 @@ void func_find(char *op_code, char *val, int ln, int form)
 	if (op_code[0] == '#')
 		return;
 
-	for (f_lag = 1, k = 0; func_list[k].op_code != NULL; k++)
+	for (f_lag = 1, k = 0; func_list[k].opcode != NULL; k++)
 	{
-		if (strcmp(op_code, func_list[k].op_code) == 0)
+		if (strcmp(op_code, func_list[k].opcode) == 0)
 		{
 			func_call(func_list[k].f, op_code, val, ln, form);
 			f_lag = 0;

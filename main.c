@@ -32,7 +32,7 @@ stack_t *node_cr(int num)
 
 	node = malloc(sizeof(stack_t));
 	if (node == NULL)
-		err(4);
+		err_pr(4);
 	node->next = NULL;
 	node->prev = NULL;
 	node->n = num;
