@@ -1,7 +1,8 @@
 #include "monty.h"
 
 /**
- * err_pr - function that prints appropiate error messages according to the error code
+ * err_pr - function that prints appropiate error messages
+ * according to the error code
  * @err_code: The error codes are the following:
  * (1) => The user does not give any file or more than one file to the program.
  * (2) => The file provided is not a file that can be opened or read.
